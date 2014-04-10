@@ -1,18 +1,18 @@
-var Client = require('../lib/client'),
-    assert = require('assert'),
-    util   = require('util'),
-    apiKey = process.env.UBIDOTS_API_TOKEN;
-
-var client = new Client(apiKey);
-var url = util.format('%s://%s', client.protocol, client.url);
-
-var expectedBody = {
-  variables: url + '/variables',
-  token: url + '/auth/token',
-  datasources: url + '/datasources'
-};
+var assert     = require('assert'),
+    util       = require('util'),
+    Client     = require('../lib/client'),
+    Datasource = require('../lib/datasource'),
+    apiKey     = process.env.UBIDOTS_API_TOKEN;
 
 describe('Client', function () {
+  var client = new Client(apiKey);
+  var url = util.format('%s://%s', client.protocol, client.url);
+
+  var expectedBody = {
+    variables: url + '/variables',
+    token: url + '/auth/token',
+    datasources: url + '/datasources'
+  };
 
   describe('#auth', function () {
 
@@ -28,6 +28,29 @@ describe('Client', function () {
     });
   });
 
+  describe('#getDatasource', function () {
+    it('should return a datasource', function () {
+      var datasource = client.getDatasource('xxxx');
+
+      assert.ok(datasource instanceof Datasource);
+      assert.ok(datasource.id === 'xxxx');
+    });
+  });
+
+  describe('#getDatasources', function () {
+    it('should get all datasources', function (done) {
+      client.getDatasources(function (err, datasources) {
+        assert.ok(!err);
+        assert.ok(Array.isArray(datasources));
+        done();
+      });
+    });
+  });
+
+  describe('#createDatasource', function () {
+    it('should create a new datasource');
+  });
+
   describe('#_request', function () {
 
     it('should contain a request method', function () {
@@ -38,7 +61,7 @@ describe('Client', function () {
       client._request({
         endpoint: ''
       }, function (err, res, body) {
-        assert.ok(!!!err);
+        assert.ok(!err);
         assert.ok(body);
         assert.deepEqual(body, expectedBody);
         done();
