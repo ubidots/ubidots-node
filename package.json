@@ -1,0 +1,31 @@
+{
+  "name": "ubidots",
+  "version": "0.0.0",
+  "description": "Ubidots Node.js API Client",
+  "main": "index.js",
+  "scripts": {
+    "test": "./node_modules/.bin/mocha -t 10000 -R spec test/*-test.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/julianduque/node-ubidots"
+  },
+  "keywords": [
+    "ubidots",
+    "internet of this",
+    "arduino",
+    "raspberry pi"
+  ],
+  "author": "Julian Duque <julianduquej@gmail.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/julianduque/node-ubidots/issues"
+  },
+  "homepage": "https://github.com/julianduque/node-ubidots",
+  "devDependencies": {
+    "mocha": "^1.18.2"
+  },
+  "dependencies": {
+    "request": "^2.34.0"
+  }
+}
