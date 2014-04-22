@@ -2,7 +2,7 @@ var assert     = require('assert'),
     util       = require('util'),
     Client     = require('../lib/client'),
     Datasource = require('../lib/datasource'),
-    apiKey     = process.env.UBIDOTS_API_TOKEN;
+    apiKey     = process.env.UBIDOTS_API_TOKEN || '';
 
 describe('Client', function () {
   var client = new Client(apiKey);
