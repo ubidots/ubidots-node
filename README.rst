@@ -4,7 +4,7 @@ Ubidots Node API Client
 
 Node.js API Client for `Ubidots <http://www.ubidots.com>`
 
-**This is a work in progress and need testing**
+**This is a work in progress and needs further testing**
 
 Install
 --------
