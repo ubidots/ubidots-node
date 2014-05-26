@@ -21,7 +21,7 @@ Usage
 
     var ubidots = require('ubidots');
     
-    var client = ubidots.createClient('api-token-xxxxxx');
+    var client = ubidots.createClient('YOUR-API-KEY');
     
     client.auth(function () {
       this.getDatasources(function (err, data) {
