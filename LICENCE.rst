@@ -1,55 +1,3 @@
-# Ubidots
-
-Node.js API Client for [Ubidots](http://www.ubidots.com)
-
-**This is a work in progress and need testing**
-
-## Install
-
-```
-$ npm install ubidots
-```
-
-## Usage
-
-``` js
-var ubidots = require('ubidots');
-
-var client = ubidots.createClient('api-token-xxxxxx');
-
-client.auth(function () {
-  this.getDatasources(function (err, data) {
-    console.log(data.results);
-  });
-
-
-  var ds = this.getDatasource('xxxxxxxx');
-
-  ds.getVariables(function (err, data) {
-    console.log(data.results);
-  });
-
-  ds.getDetails(function (err, details) {
-    console.log(details);
-  });
-
-  var v = this.getVariable('xxxxxxx');
-
-  v.getDetails(function (err, details) {
-    console.log(details);
-  });
-
-  v.saveValue(22);
-
-  v.getValues(function (err, data) {
-    console.log(data.results);
-  });
-});
-
-```
-
-## The MIT License (MIT)
-
 Copyright (c) 2014 - Julian Duque
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
@@ -69,3 +17,4 @@ AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
 LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 THE SOFTWARE.
+
