@@ -2,7 +2,9 @@
 Ubidots Node API Client
 ===================================
 
-Node.js API Client for `Ubidots <http://www.ubidots.com>`
+Node.js API Client for `Ubidots <http://www.ubidots.com>`_
+
+https://github.com/ubidots/ubidots-node
 
 **This is a work in progress and needs further testing**
 
