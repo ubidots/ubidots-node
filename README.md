@@ -1,35 +1,27 @@
-===================================
-Ubidots Node API Client
-===================================
 
-Node.js API Client for `Ubidots <http://www.ubidots.com>`_
+# Ubidots Node API Client
+
+Node.js API Client for [Ubidots](http://www.ubidots.com)
 
 https://github.com/ubidots/ubidots-node
 
 **This is a work in progress and needs further testing**
 
-Install
---------
+## Install
 
-.. code-block:: bash
+```
+$ npm install ubidots
+```
 
-    $ npm install ubidots
-
-
-Usage
-------
-
-.. code-block:: js
-
-    var ubidots = require('ubidots');
-    
-    var client = ubidots.createClient('YOUR-API-KEY');
+## Usage
+```
+var ubidots = require('ubidots');
+var client = ubidots.createClient('YOUR-API-KEY');
     
     client.auth(function () {
       this.getDatasources(function (err, data) {
         console.log(data.results);
       });
-    
     
       var ds = this.getDatasource('xxxxxxxx');
     
@@ -53,14 +45,13 @@ Usage
         console.log(data.results);
       });
     });
+```
+    
 
-Usage with Promises
---------------------
-
-.. code-block:: js
-
-    const ubidots = require('ubidots');
-    const client = ubidots.createClient('PUT_API_KEY_HERE');
+## Usage with Promises
+```
+const ubidots = require('ubidots');
+const client = ubidots.createClient('PUT_API_KEY_HERE');
 
     function getDataSources(){
       return new Promise(function (resolve, reject){
@@ -158,16 +149,16 @@ Usage with Promises
       saveVariableValue,
       getValuesFromVariable
     }
+```
 
-
-call function from other file
-------------------------------
-
-.. code-block:: js
-    then you can call the file functions like that
     
-    const ubidotsService = require("./ubitosService");
-    const Rx = require("rxjs"); // if you want to use RxJs
+
+
+## call functions from other file
+```
+const ubidotsService = require("./ubitosService");
+const Rx = require("rxjs"); // if you want to use RxJs
+
     ubidotsService.getDataSources().then((result) => {
         console.log(result);
     });
@@ -178,6 +169,8 @@ call function from other file
         (error) => { console.log(error) },
         () => { console.log("Finished!!") }
     )
+```
+    
 
 
 
