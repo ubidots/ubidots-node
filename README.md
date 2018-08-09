@@ -1,35 +1,27 @@
-===================================
-Ubidots Node API Client
-===================================
 
-Node.js API Client for `Ubidots <http://www.ubidots.com>`_
+# Ubidots Node API Client
+
+Node.js API Client for [Ubidots](http://www.ubidots.com)
 
 https://github.com/ubidots/ubidots-node
 
 **This is a work in progress and needs further testing**
 
-Install
---------
+## Install
 
-.. code-block:: bash
+```
+$ npm install ubidots
+```
 
-    $ npm install ubidots
-
-
-Usage
-------
-
-.. code-block:: js
-
-    var ubidots = require('ubidots');
-    
-    var client = ubidots.createClient('YOUR-API-KEY');
+## Usage
+```
+var ubidots = require('ubidots');
+var client = ubidots.createClient('YOUR-API-KEY');
     
     client.auth(function () {
       this.getDatasources(function (err, data) {
         console.log(data.results);
       });
-    
     
       var ds = this.getDatasource('xxxxxxxx');
     
@@ -53,5 +45,7 @@ Usage
         console.log(data.results);
       });
     });
+```
 
 
+##### You may find the examples with Promises and RxJs library [here](examples/)
