@@ -2,10 +2,10 @@ var assert     = require('assert'),
     util       = require('util'),
     Client     = require('../lib/client'),
     Datasource = require('../lib/datasource'),
-    apiKey     = process.env.UBIDOTS_API_TOKEN || '';
+    apiToken   = process.env.UBIDOTS_API_TOKEN || '';
 
 describe('Client', function () {
-  var client = new Client(apiKey);
+  var client = new Client(apiToken);
   var url = util.format('%s://%s', client.protocol, client.url);
 
   var expectedBody = {

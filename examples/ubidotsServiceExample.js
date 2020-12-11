@@ -1,5 +1,5 @@
 const ubidots = require('ubidots');
-const client = ubidots.createClient('PUT_API_KEY_HERE');
+const client = ubidots.createClient('PUT_API_TOKEN_HERE');
 
 /**
  * Returns DataSource list

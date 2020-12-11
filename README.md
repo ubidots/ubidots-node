@@ -16,7 +16,7 @@ $ npm install ubidots
 ## Usage
 ```
 var ubidots = require('ubidots');
-var client = ubidots.createClient('YOUR-API-KEY');
+var client = ubidots.createClient('YOUR-API-TOKEN');
     
     client.auth(function () {
       this.getDatasources(function (err, data) {
