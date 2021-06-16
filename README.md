@@ -1,4 +1,8 @@
 
+# Deprecation announcement
+
+This library will be no longer maintained by the Ubidots team, please consider using the native node HTTP requests library to send/retrieve data following our REST API specification.
+
 # Ubidots Node API Client
 
 Node.js API Client for [Ubidots](http://www.ubidots.com)
