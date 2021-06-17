@@ -1,6 +1,6 @@
 {
   "name": "ubidots",
-  "version": "0.0.4",
+  "version": "0.0.5",
   "description": "Ubidots Node.js API Client",
   "main": "index.js",
   "scripts": {
@@ -23,9 +23,10 @@
   },
   "homepage": "https://github.com/julianduque/node-ubidots",
   "devDependencies": {
-    "mocha": "^1.18.2"
+    "mocha": "^8.2.1"
   },
   "dependencies": {
-    "request": "^2.34.0"
+    "request": "^2.34.0",
+    "utils": "^0.3.1"
   }
 }
